@@ -2,10 +2,11 @@
   "id": "conan2d20-item-icons",
   "title": "Conan 2d20 - Item Icons",
   "description": "Assigns clearer item icons to Conan 2d20 world and actor items, with automatic assignment on import/create and a one-click world migration.",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "authors": [
     {
-      "name": "Kiryna"
+      "name": "Kiryna",
+      "url": "https://github.com/kiryna-cpg/conan2d20-item-icons"
     }
   ],
   "compatibility": {
@@ -35,5 +36,11 @@
       "path": "lang/es.json"
     }
   ],
+  "url": "https://github.com/kiryna-cpg/conan2d20-item-icons",
+  "manifest": "https://raw.githubusercontent.com/kiryna-cpg/conan2d20-item-icons/main/module.json",
+  "download": "https://github.com/kiryna-cpg/conan2d20-reach-status/releases/download/0.4.1/conan2d20-item-icons.zip",
+  "readme": "https://raw.githubusercontent.com/kiryna-cpg/conan2d20-item-icons/main/README.md",
+  "changelog": "https://raw.githubusercontent.com/kiryna-cpg/conan2d20-item-icons/main/CHANGELOG.md",
+  "bugs": "https://github.com/kiryna-cpg/conan2d20-item-icons/issues",
   "license": "MIT"
 }
