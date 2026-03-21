@@ -2,7 +2,7 @@
   "id": "conan2d20-item-icons",
   "title": "Conan 2d20 - Item Icons",
   "description": "Assigns clearer item icons to Conan 2d20 world and actor items, with automatic assignment on import/create and a one-click world migration.",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "authors": [
     {
       "name": "Kiryna",

@@ -1956,7 +1956,7 @@
     "name": "Unarmed/Improvised (Melee)",
     "type": "weapon",
     "currentImg": "systems/conan2d20/assets/icons/compendiums/icon-weapon.png",
-    "icon": "modules/conan2d20-item-icons/icons/varios/unarmed-improvised-melee.webp",
+    "icon": "modules/conan2d20-item-icons/icons/other/unarmed-improvised-melee.webp",
     "notes": ""
   },
   {
@@ -1966,7 +1966,7 @@
     "name": "Unarmed/Improvised (Ranged)",
     "type": "weapon",
     "currentImg": "systems/conan2d20/assets/icons/compendiums/icon-weapon.png",
-    "icon": "modules/conan2d20-item-icons/icons/varios/unarmed-improvised-ranged.webp",
+    "icon": "modules/conan2d20-item-icons/icons/other/unarmed-improvised-ranged.webp",
     "notes": ""
   },
   {
@@ -3006,7 +3006,7 @@
     "name": "Steely Glare",
     "type": "display",
     "currentImg": "systems/conan2d20/assets/icons/compendiums/icon-display-power.png",
-    "icon": "modules/conan2d20-item-icons/icons/varios/steely-glare.webp",
+    "icon": "modules/conan2d20-item-icons/icons/other/steely-glare.webp",
     "notes": ""
   },
   {

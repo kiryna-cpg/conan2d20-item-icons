@@ -2,6 +2,11 @@
 
 All notable changes to **Conan 2d20 - Item Icons** will be documented in this file.
 
+## [0.4.2] - 2026-03-21
+
+### Fixed
+- Fixed broken links.
+
 ## [0.4.1] - 2026-03-20
 
 ### Added
