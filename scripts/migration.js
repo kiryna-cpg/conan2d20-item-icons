@@ -34,6 +34,24 @@ function getLastResolver(item) {
   return String(item?.getFlag?.(MODULE_ID, FLAG_KEYS.RESOLVER) ?? "").trim();
 }
 
+function getMigrationType(item) {
+  const itemType = String(item?.type ?? "").toLowerCase();
+
+  if (itemType !== "npcattack") return itemType;
+
+  const attackType = String(item?.system?.attackType ?? "").toLowerCase();
+
+  if (attackType === "threaten") return "display";
+  if (attackType === "melee" || attackType === "ranged") return "weapon";
+
+  return "weapon";
+}
+
+function shouldMigrateItemType(item, selectedTypes) {
+  if (!selectedTypes?.size) return true;
+  return selectedTypes.has(getMigrationType(item));
+}
+
 async function getCompendiumSourceImage(sourceId, cache) {
   if (!sourceId) return null;
   if (cache.has(sourceId)) return cache.get(sourceId);
@@ -139,8 +157,12 @@ function buildItemUpdate(item, assignment) {
   };
 }
 
-export async function runIconMigration({ overwriteCustomIcons = false } = {}) {
+export async function runIconMigration({ overwriteCustomIcons = false, types = [] } = {}) {
   await ensureIconOverridesLoaded();
+
+  const selectedTypes = new Set(
+    types.map((type) => String(type ?? "").toLowerCase().trim()).filter(Boolean)
+  );
 
   const result = {
     worldItemsUpdated: 0,
@@ -151,6 +173,8 @@ export async function runIconMigration({ overwriteCustomIcons = false } = {}) {
   const sourceImageCache = new Map();
   const worldUpdates = [];
   for (const item of game.items.contents) {
+    if (!shouldMigrateItemType(item, selectedTypes)) continue;
+
     const assignment = resolveIconAssignment(item);
     if (!assignment) continue;
     if (!(await shouldUpdateExistingItem(item, assignment, { overwriteCustomIcons, sourceImageCache }))) continue;
@@ -166,8 +190,10 @@ export async function runIconMigration({ overwriteCustomIcons = false } = {}) {
   for (const actor of game.actors.contents) {
     const embeddedUpdates = [];
 
-    for (const item of actor.items.contents) {
-      const assignment = resolveIconAssignment(item);
+  for (const item of game.items.contents) {
+    if (!shouldMigrateItemType(item, selectedTypes)) continue;
+
+    const assignment = resolveIconAssignment(item);
       if (!assignment) continue;
       if (!(await shouldUpdateExistingItem(item, assignment, { overwriteCustomIcons, sourceImageCache }))) continue;
       const update = buildItemUpdate(item, assignment);

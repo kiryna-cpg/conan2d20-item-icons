@@ -1,20 +1,35 @@
 {
   "C2I.Setting.AutoAssignOnCreate.Name": "Auto-assign Conan item icons on create/import",
   "C2I.Setting.AutoAssignOnCreate.Hint": "When enabled, newly created world items and actor items receive a Conan icon automatically. Imported compendium items are treated as valid targets.",
+
   "C2I.Setting.OverwriteCustomIcons.Name": "Overwrite custom icons during migration",
-  "C2I.Setting.OverwriteCustomIcons.Hint": "When enabled, the manual migration also replaces non-generic item images. Leave disabled to preserve custom artwork and only replace generic or previously auto-assigned icons.",
-  "C2I.Setting.RunMigrationNow.Name": "Run icon migration now",
-    "C2I.Setting.RunMigrationNow.Hint": "Enable this once to update existing world items and embedded actor items. After editing data/icon-overrides.json, use Reload Application before running the migration. The setting resets automatically after the migration finishes.",
+  "C2I.Setting.OverwriteCustomIcons.Hint": "When enabled, the migration also replaces non-generic item images. Leave disabled to preserve custom artwork and only replace generic or previously auto-assigned icons.",
+
+  "C2I.Menu.Migration.Name": "Run Icon Migration",
+  "C2I.Menu.Migration.Label": "Open Migration Dialog",
+  "C2I.Menu.Migration.Hint": "Open a dialog to apply icon overrides from data/icon-overrides.json to selected item types in world items and actor items.",
+
+  "C2I.MigrationDialog.Title": "Run Icon Migration",
+  "C2I.MigrationDialog.Content": "Select which item types should receive icon overrides from data/icon-overrides.json. After editing that file, use Reload Application before running the migration.",
+  "C2I.MigrationDialog.TypesLegend": "Item types",
+  "C2I.MigrationDialog.OptionsLegend": "Options",
+  "C2I.MigrationDialog.Run": "Run Migration",
+  "C2I.MigrationDialog.Cancel": "Cancel",
+
+  "C2I.Notification.MigrationNoneSelected": "Select at least one item type for migration.",
   "C2I.Notification.MigrationComplete": "Conan item icon migration complete. Updated {world} world items and {actorItems} actor items across {actors} actors.",
   "C2I.Notification.MigrationFailed": "Conan item icon migration failed. Check the browser console for details.",
+
   "C2I.Menu.ResetIcons.Name": "Reset Icons to System Default",
   "C2I.Menu.ResetIcons.Label": "Open Reset Dialog",
   "C2I.Menu.ResetIcons.Hint": "Open a dialog to restore the selected item types to their Conan system default icons across world items, actor items, and unlinked token items.",
+
   "C2I.ResetDialog.Title": "Reset Icons to System Default",
   "C2I.ResetDialog.Content": "Select which item types should be restored to their Conan system default icons.",
   "C2I.ResetDialog.TypesLegend": "Item types",
   "C2I.ResetDialog.Reset": "Reset Icons",
   "C2I.ResetDialog.Cancel": "Cancel",
+
   "C2I.ResetDialog.Type.Weapon": "Weapons",
   "C2I.ResetDialog.Type.Armor": "Armor",
   "C2I.ResetDialog.Type.Consumable": "Consumables",
@@ -24,6 +39,7 @@
   "C2I.ResetDialog.Type.Miscellaneous": "Miscellaneous",
   "C2I.ResetDialog.Type.Spell": "Spells",
   "C2I.ResetDialog.Type.Talent": "Talents",
+
   "C2I.Notification.ResetNoneSelected": "Select at least one item type.",
   "C2I.Notification.ResetComplete": "Conan system icon reset complete. Updated {world} world items and {actorItems} actor items across {actors} actors. Unresolved items: {unresolved}.",
   "C2I.Notification.ResetFailed": "Resetting icons to Conan system defaults failed. Check the browser console for details."

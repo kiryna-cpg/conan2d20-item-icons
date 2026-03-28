@@ -2,6 +2,20 @@
 
 All notable changes to **Conan 2d20 - Item Icons** will be documented in this file.
 
+## [0.5.0] - 2026-03-28
+
+### Added
+- Added a dedicated **Open Migration Dialog** settings submenu for manual icon migration.
+- Added item-type selection to manual migration, matching the reset workflow.
+
+### Changed
+- Replaced the old **Run migration now + Save Changes** workflow with a dialog-driven migration flow.
+- Moved **Overwrite custom icons during migration** from a persistent world setting into the migration dialog.
+- Updated the README to follow the same general structure used in the other Foundry modules in this project.
+
+### Removed
+- Removed the old boolean migration trigger from Module Settings.
+
 ## [0.4.2] - 2026-03-21
 
 ### Fixed
