@@ -190,12 +190,13 @@ export async function runIconMigration({ overwriteCustomIcons = false, types = [
   for (const actor of game.actors.contents) {
     const embeddedUpdates = [];
 
-  for (const item of game.items.contents) {
-    if (!shouldMigrateItemType(item, selectedTypes)) continue;
+    for (const item of actor.items.contents) {
+      if (!shouldMigrateItemType(item, selectedTypes)) continue;
 
-    const assignment = resolveIconAssignment(item);
+      const assignment = resolveIconAssignment(item);
       if (!assignment) continue;
       if (!(await shouldUpdateExistingItem(item, assignment, { overwriteCustomIcons, sourceImageCache }))) continue;
+
       const update = buildItemUpdate(item, assignment);
       if (update) embeddedUpdates.push(update);
     }
